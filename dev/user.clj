@@ -15,40 +15,45 @@
 
 (def dev-port 7601)
 
-(def system
-  "A container for the current instance of the application.
-  Only used for interactive development."
+(defonce the-system
+  ;; "A container for the current instance of the application.
+  ;; Only used for interactive development."
+  ;;
+  ;; Don't want to lose this value if this file is recompiled (when
+  ;; changes are made to the useful additional utilities for the REPL
+  ;; at the end of the file), so use `defonce`.
+  ;; But note that this /is/ blatted when a `reset` is done.
   nil)
 
-(defn init
-  "Constructs the current development system."
+(defn create
+  "Creates a system and makes it the current development system."
   []
-  (alter-var-root #'system
-    (constantly (system/dev-system dev-port))))
+  (alter-var-root #'the-system
+    (constantly (system/create-dev-system dev-port))))
 
 (defn start
   "Starts the current development system."
   []
-  (alter-var-root #'system system/start))
+  (alter-var-root #'the-system system/start))
 
 (defn stop
   "Shuts down and destroys the current development system."
   []
-  (alter-var-root #'system
+  (alter-var-root #'the-system
     (fn [s] (when s (system/stop s)))))
 
-(defn go
-  "Initializes the current development system and starts it running."
+(defn create-and-start
+  "Creates a system, makes it the current development system and starts it."
   []
-  (init)
+  (create)
   (start))
 
 (defn reset []
-  "Stop, refresh and go."
+  "Stop, refresh and create-and-start."
   (stop)
-  (refresh :after 'user/go))
+  (refresh :after 'user/create-and-start))
 
 ;;;;; Useful additional utilities for the REPL
 
 (defn inc-value-in-domain-model []
-  (domain-stuff/inc-value-in-domain-model (:domain-model system)))
+  (domain-stuff/inc-value-in-domain-model (:domain-model the-system)))

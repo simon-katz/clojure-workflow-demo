@@ -3,7 +3,7 @@
             [clojure-workflow-demo.web.server :as server]
             [clojure-workflow-demo.web.web-page :as web-page]))
 
-(defn system []
+(defn create-system []
   "Returns a new instance of the whole application."
   (let [domain-model (domain-stuff/create-domain-model)
         handler (web-page/create-handler domain-model)]
@@ -17,7 +17,7 @@
 ;;;; production profile.
 
 (def the-production-system
-  (system))
+  (create-system))
 
 (def the-production-handler
   "The production system's Ring handler. Can be used by `lein ring`."
@@ -29,10 +29,10 @@
 ;;;; Maybe this belongs in a separate namespace that's only loaded in a
 ;;;; dev profile.
 
-(defn dev-system
+(defn create-dev-system
   "Returns a new dev instance of the whole application."
   [port]
-  (into (system)
+  (into (create-system)
         {:port port}))
 
 (defn start
