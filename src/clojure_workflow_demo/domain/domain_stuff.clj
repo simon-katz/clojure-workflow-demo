@@ -3,8 +3,8 @@
 (defn create-domain-model []
   (atom 0))
 
-(defn value-in-domain-model [model]
+(defn value [model]
   @model)
 
-(defn inc-value-in-domain-model [model]
+(defn inc-value [model]
   (swap! model inc))

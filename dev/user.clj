@@ -55,5 +55,5 @@
 
 ;;;;; Useful additional utilities for the REPL
 
-(defn inc-value-in-domain-model []
-  (domain-stuff/inc-value-in-domain-model (:domain-model the-system)))
+(defn inc-value []
+  (domain-stuff/inc-value (:domain-model the-system)))

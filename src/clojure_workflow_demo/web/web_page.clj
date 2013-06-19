@@ -8,7 +8,7 @@
 (defn create-handler* [domain-model]
   (routes
    (GET "/" request
-     (let [value (domain-model/value-in-domain-model domain-model)]
+     (let [value (domain-model/value domain-model)]
        (hiccup.core/html
         [:html
          [:b "Clojure Workflow Demo"]
@@ -17,8 +17,8 @@
          (str " The value is "
               value
               ".")])))
-   (PUT "/inc-value-in-domain-model" request
-     (let [value (domain-model/inc-value-in-domain-model domain-model)]
+   (PUT "/inc-value" request
+     (let [value (domain-model/inc-value domain-model)]
        (str value)))
    (not-found "Sorry, there's nothing here.")))
 
