@@ -6,9 +6,9 @@
 
 ;;;; Dev port
 
-curl -X PUT 'http://localhost:7601/inc-value'
+curl -X POST 'http://localhost:7601/inc-value'
 
 
 ;;;; The usual `lein ring` port
 
-curl -X PUT 'http://localhost:3000/inc-value'
+curl -X POST 'http://localhost:3000/inc-value'
