@@ -12,7 +12,7 @@
      [:html
       [:div {:align "center"}
        [:h1 "Clojure Workflow Demo"]
-       (str " The value is " value)
+       (str "The value is " value)
        [:br]
        [:br]
        [:form {:action "/inc-value"
