@@ -1,4 +1,4 @@
-(defproject clojure-workflow-demo "0.1.0-SNAPSHOT"
+(defproject clojure-workflow-demo "1.0"
   :description "Clojure Workflow Demo"
   :url "https://github.com/simon-katz/clojure-workflow-demo"
   :license {:name "Eclipse Public License"
