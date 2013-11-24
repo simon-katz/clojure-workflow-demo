@@ -53,7 +53,7 @@
   (stop)
   (refresh :after 'user/create-and-start))
 
-;;;;; Useful additional utilities for the REPL
+;;;; Useful additional utilities for the REPL
 
 (defn inc-value []
   (domain-stuff/inc-value (:domain-model the-system)))
