@@ -4,11 +4,4 @@
 ;;;; ___________________________________________________________________________
 ;;;; ---- Curl commands to send to a shell ----
 
-;;;; Dev port
-
 curl -X POST 'http://localhost:7601/inc-value'
-
-
-;;;; The usual `lein ring` port
-
-curl -X POST 'http://localhost:3000/inc-value'

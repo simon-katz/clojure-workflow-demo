@@ -13,8 +13,6 @@
             [clojure.java.classpath :as cjc]
             [criterium.core :as crit]))
 
-(def dev-port 7601)
-
 (defonce the-system
   ;; "A container for the current instance of the application.
   ;; Only used for interactive development."
@@ -29,7 +27,7 @@
   "Creates a system and makes it the current development system."
   []
   (alter-var-root #'the-system
-    (constantly (system/create-dev-system dev-port))))
+    (constantly (system/create-system))))
 
 (defn start
   "Starts the current development system."

@@ -1,7 +1,7 @@
 (ns clojure-workflow-demo.web.server
   (:require [ring.adapter.jetty :as jetty]))
 
-(defn create
+(defn create-and-start
   [handler & {:keys [port]}]
   {:pre [(not (nil? port))]}
   (jetty/run-jetty handler {:port port :join? false}))

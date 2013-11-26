@@ -7,10 +7,9 @@
                  [compojure "1.1.5"]
                  [ring "1.1.8"]
                  [midje "1.5.1"]]
-  :plugins [[lein-ring "0.8.5"]]
-  :ring {:handler clojure-workflow-demo.system/the-production-handler}
+  :main clojure-workflow-demo.system
   :profiles {:dev {:source-paths ["dev"]
-                   :dependencies [[org.clojure/tools.namespace "0.2.3"]
+                   :dependencies [[org.clojure/tools.namespace "0.2.4"]
                                   [com.cemerick/pomegranate "0.2.0"]
                                   ;; [slamhound "1.3.3"]
                                   [spyscope "0.1.3"]
