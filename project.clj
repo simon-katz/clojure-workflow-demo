@@ -14,4 +14,5 @@
                                   ;; [slamhound "1.3.3"]
                                   [spyscope "0.1.3"]
                                   [criterium "0.4.1"]
-                                  [org.clojure/java.classpath "0.2.0"]]}})
+                                  [org.clojure/java.classpath "0.2.0"]]
+                   :plugins [[lein-kibit "0.0.8"]]}})
