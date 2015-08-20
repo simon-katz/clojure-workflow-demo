@@ -7,6 +7,7 @@
                  [compojure "1.1.5"]
                  [ring "1.1.8"]
                  [midje "1.5.1"]]
+  :repl-options {:init-ns user}
   :main clojure-workflow-demo.system
   :profiles {:dev {:source-paths ["dev"]
                    :dependencies [[org.clojure/tools.namespace "0.2.4"]
