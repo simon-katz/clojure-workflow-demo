@@ -27,7 +27,7 @@
   "Creates a system and makes it the current development system."
   []
   (alter-var-root #'the-system
-    (constantly (system/create-system))))
+                  (constantly (system/create-system))))
 
 (defn start
   "Starts the current development system."
@@ -38,7 +38,7 @@
   "Shuts down and destroys the current development system."
   []
   (alter-var-root #'the-system
-    (fn [s] (when s (system/stop s)))))
+                  (fn [s] (when s (system/stop s)))))
 
 (defn go
   "Creates a system, makes it the current development system and starts it."
@@ -46,8 +46,9 @@
   (init)
   (start))
 
-(defn reset []
+(defn reset
   "Stop, refresh and go."
+  []
   (stop)
   (refresh :after 'user/go))
 
