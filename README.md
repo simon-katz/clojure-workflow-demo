@@ -8,7 +8,7 @@ See
 for details of his approach.
 
 See
-[my blog post](http://nomistech.blogspot.co.uk/2013/06/stuart-sierras-clojure-development_18.html)
+[my blog post](http://blogish.nomistech.com/clojure/clojure-workflow-demo/)
 for details of what's here, especially for a few minor differences
 between what's here and what's described in Stuart's blog post.
 
