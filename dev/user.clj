@@ -6,7 +6,7 @@
             [clojure.tools.namespace.move :refer :all]
             [clojure.repl :refer :all]
             [clojure.pprint :refer :all]
-            [spyscope.core]
+            #_[spyscope.core]
             [cemerick.pomegranate :refer [add-dependencies]]
             [clojure.java.io :as cjio]
             [clojure.string :as str]
